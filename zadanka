@@ -43,3 +43,4 @@ create table sprzedaz (
     cena int);
 
 
+insert into sprzedaz (id_towaru,sztuk,cena) values (1,3,30);
