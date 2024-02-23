@@ -108,14 +108,9 @@ alter table sprzedaz add kursantki_id int;
 create TRIGGER nowasprzedaz after insert on sprzedaz for 
 	EACH row update kursantki set ostatni_zakup_id = new.kursantki_id;
 
-
-insert into sprzedaz(id_towaru, sztuk, cena, kursantki_id) values (1,11,123,1);
-select * from sprzedaz;
-
-insert into sprzedaz(id_towaru, sztuk, cena, kursantki_id) values (1,11,123,1);
-select * from sprzedaz;
-select * from kursantki;
-
+insert into sprzedaz (id_towaru,sztuk,cena,kursantki_id) values (1,11,123,1);
 
 insert into sprzedaz (id_towaru,sztuk,cena,kursantki_id) values (2,22,443,2);
+
+insert into sprzedaz (id_towaru,sztuk,cena,kursantki_id) values (3,1,12,5);
 
