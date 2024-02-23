@@ -24,3 +24,13 @@ SELECT sum(amount),
           "Zamowienie miedzy 100 a 120",
           "zamowienie powyzej 100"),
        "zamowienie ponizej 100") FROM `payment` GROUP BY customer_id;
+
+create table towary(
+    id SERIAL,
+    nazwa varchar(255) not null,
+    przyjecie timestamp);
+    
+    insert into towary(nazwa) VALUES ('Mleko');
+       insert into towary(nazwa) VALUES ('Smietana');
+          insert into towary(nazwa) VALUES ('Ser');
+             insert into towary(nazwa) VALUES ('Jogurt');
