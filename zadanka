@@ -115,3 +115,7 @@ select * from sprzedaz;
 insert into sprzedaz(id_towaru, sztuk, cena, kursantki_id) values (1,11,123,1);
 select * from sprzedaz;
 select * from kursantki;
+
+
+insert into sprzedaz (id_towaru,sztuk,cena,kursantki_id) values (2,22,443,2);
+
