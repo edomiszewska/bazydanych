@@ -57,3 +57,35 @@ przyklady transakcji
 --------------------
 
 
+START TRANSACTION;
+
+-- Aktualizuj dane klienta
+UPDATE customer 
+SET first_name = 'NoweImie', last_name = 'NoweNazwisko' 
+WHERE customer_id = klient_id;
+
+-- Dodaj nowy rekord do tabeli płatności
+INSERT INTO payment (customer_id, staff_id, rental_id, amount, payment_date) 
+VALUES (klient_id, pracownik_id, rental_id, kwota, NOW());
+
+COMMIT;
+
+
+START TRANSACTION;
+
+-- Znajdź wypożyczenie danego filmu przez danego klienta
+UPDATE rental 
+SET return_date = NOW() 
+WHERE inventory_id = (SELECT inventory_id FROM inventory WHERE film_id = (SELECT film_id FROM film WHERE title = 'NazwaFilmu')) 
+AND customer_id = klient_id 
+AND return_date IS NULL;
+
+-- Aktualizuj liczbę dostępnych egzemplarzy filmu
+UPDATE film 
+SET available = available + 1 
+WHERE film_id = (SELECT film_id FROM film WHERE title = 'NazwaFilmu');
+
+COMMIT;
+
+
+
