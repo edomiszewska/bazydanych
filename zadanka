@@ -2,3 +2,10 @@
 27 zadanko moje
 ====================
 1)SELECT case release_year when 2006 then release_year END, title from `film`
+
+
+2)SELECT first_name, last_name, 
+CASE first_name WHEN 'ED' THEN "To ed" ELSE 'to nie ed' END,
+CASE  last_name WHEN 'GUINESS' THEN "to gines" ELSE 'to nie gines' END,
+CASE first_name WHEN 'PENELOPE' THEN "to penelopa" ELSE 'to nie penelopa' END,
+CASE first_name WHEN 'JOHNNY' THEN "to johnny" ELSE 'to nie johnny' END FROM `actor`;
