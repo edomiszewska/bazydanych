@@ -15,3 +15,12 @@ CASE first_name WHEN 'JOHNNY' THEN "to johnny" ELSE 'to nie johnny' END FROM `ac
 SELECT customer_id,avg(amount) as `srednia`,
 CASE WHEN AVG(amount)>3.5 THEN "Duza srednia zamowienia" ELSE "Mala srednia zamowienia" END as srednia_zamowienia 
 from `payment` GROUP BY customer_id;
+
+
+4 i 5)
+SELECT sum(avg),
+	if(sum(avg)>100,
+       if(sum(avg)<120,
+          "Zamowienie miedzy 100 a 120",
+          zamowienie powyzej 100),
+       "zamowienie ponizej 100") FROM `payment` GROUP BY customer_id;
