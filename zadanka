@@ -9,3 +9,9 @@ CASE first_name WHEN 'ED' THEN "To ed" ELSE 'to nie ed' END,
 CASE  last_name WHEN 'GUINESS' THEN "to gines" ELSE 'to nie gines' END,
 CASE first_name WHEN 'PENELOPE' THEN "to penelopa" ELSE 'to nie penelopa' END,
 CASE first_name WHEN 'JOHNNY' THEN "to johnny" ELSE 'to nie johnny' END FROM `actor`;
+
+3)
+
+SELECT customer_id,avg(amount) as `srednia`,
+CASE WHEN AVG(amount)>3.5 THEN "Duza srednia zamowienia" ELSE "Mala srednia zamowienia" END as srednia_zamowienia 
+from `payment` GROUP BY customer_id;
