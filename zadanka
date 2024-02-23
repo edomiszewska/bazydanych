@@ -34,3 +34,12 @@ create table towary(
        insert into towary(nazwa) VALUES ('Smietana');
           insert into towary(nazwa) VALUES ('Ser');
              insert into towary(nazwa) VALUES ('Jogurt');
+
+alter table towary add stan int not null DEFAULT 30;
+create table sprzedaz (
+    id serial,
+    id_towaru int,
+    sztuk int,
+    cena int);
+
+
