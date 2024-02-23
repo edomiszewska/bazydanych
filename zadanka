@@ -18,9 +18,9 @@ from `payment` GROUP BY customer_id;
 
 
 4 i 5)
-SELECT sum(avg),
-	if(sum(avg)>100,
-       if(sum(avg)<120,
+SELECT sum(amount),
+	if(sum(amount)>100,
+       if(sum(amount)<120,
           "Zamowienie miedzy 100 a 120",
-          zamowienie powyzej 100),
+          "zamowienie powyzej 100"),
        "zamowienie ponizej 100") FROM `payment` GROUP BY customer_id;
